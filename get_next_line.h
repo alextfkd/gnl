@@ -6,7 +6,7 @@
 /*   By: tkatsuma <tkatsuma@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/13 16:36:13 by tkatsuma          #+#    #+#             */
-/*   Updated: 2025/05/22 21:54:33 by tkatsuma         ###   ########.fr       */
+/*   Updated: 2025/06/30 11:46:16 by tkatsuma         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,7 +50,7 @@ t_carry		*append_carry(t_carry *head, t_read_resp *read_resp);
 t_carry		*create_new_carry(int fd);
 char		*clear_carry(t_carry **carry);
 t_read_resp	*ft_read(int fd);
-char		*ft_strjoin(char *s1, char *s2);
+char		*gnl_strjoin(char *s1, char *s2);
 char		*ft_strndup(char *s, int st, int ed);
 char		*get_next_line(int fd);
 size_t		gnl_strlen(char *s);

@@ -6,7 +6,7 @@
 /*   By: tkatsuma <tkatsuma@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/13 16:37:27 by tkatsuma          #+#    #+#             */
-/*   Updated: 2025/05/21 09:48:06 by tkatsuma         ###   ########.fr       */
+/*   Updated: 2025/06/30 11:46:16 by tkatsuma         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ size_t	gnl_strlen(char *s)
 }
 
 // Need to free s1 & s2 at the outside of this func.
-char	*ft_strjoin(char *s1, char *s2)
+char	*gnl_strjoin(char *s1, char *s2)
 {
 	char	*arr;
 	char	*p1;
@@ -83,7 +83,7 @@ t_carry	*append_carry(t_carry *head, t_read_resp *read_resp)
 		return (NULL);
 	if (read_resp->txt == NULL)
 		head->eof = TRUE;
-	new_txt = ft_strjoin(head->txt, read_resp->txt);
+	new_txt = gnl_strjoin(head->txt, read_resp->txt);
 	head->len += read_resp->len;
 	if (head->txt != NULL)
 	{
