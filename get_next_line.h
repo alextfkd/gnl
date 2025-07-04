@@ -6,7 +6,7 @@
 /*   By: tkatsuma <tkatsuma@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/13 16:36:13 by tkatsuma          #+#    #+#             */
-/*   Updated: 2025/06/30 11:46:16 by tkatsuma         ###   ########.fr       */
+/*   Updated: 2025/07/04 10:41:00 by tkatsuma         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,8 +26,8 @@
 # include <stdio.h>
 # include <stdlib.h>
 # include <string.h>
-# define TRUE 1
-# define FALSE 0
+# define I_TRUE 1
+# define I_FALSE 0
 
 typedef struct s_carry
 {

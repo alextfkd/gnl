@@ -6,7 +6,7 @@
 /*   By: tkatsuma <tkatsuma@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/13 16:35:47 by tkatsuma          #+#    #+#             */
-/*   Updated: 2025/05/22 22:02:24 by tkatsuma         ###   ########.fr       */
+/*   Updated: 2025/07/04 10:41:44 by tkatsuma         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,7 +51,7 @@ char	*pop_new_line(t_carry *head)
 		return (NULL);
 	while (head->txt[i] != '\0' && head->txt[i] != '\n')
 		i++;
-	if (head->eof == FALSE && head->txt[i] == '\0')
+	if (head->eof == I_FALSE && head->txt[i] == '\0')
 		return (NULL);
 	res = ft_strndup(head->txt, 0, i);
 	new_carry = ft_strndup(head->txt, i + 1, -1);
@@ -78,11 +78,11 @@ t_read_resp	*ft_read(int fd)
 	response->len = len;
 	if (len == 0)
 	{
-		response->eof = TRUE;
+		response->eof = I_TRUE;
 		response->txt = NULL;
 		return (response);
 	}
-	response->eof = FALSE;
+	response->eof = I_FALSE;
 	response->txt = ft_strndup(buf, 0, len - 1);
 	if (response->txt == NULL)
 		return (free(response), NULL);
@@ -117,7 +117,7 @@ char	*get_next_line(int fd)
 		if (response == NULL)
 			return (clear_carry(&carry));
 		append_carry(carry, response);
-		if (carry->eof == TRUE)
+		if (carry->eof == I_TRUE)
 			break ;
 		res = pop_new_line(carry);
 		if (res != NULL)
@@ -126,7 +126,7 @@ char	*get_next_line(int fd)
 	res = pop_new_line(carry);
 	if (res == NULL)
 		return (clear_carry(&carry));
-	if (res[0] == '\0' && carry->eof == TRUE)
+	if (res[0] == '\0' && carry->eof == I_TRUE)
 		return (free(res), clear_carry(&carry));
 	return (res);
 }

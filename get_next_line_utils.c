@@ -6,7 +6,7 @@
 /*   By: tkatsuma <tkatsuma@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/13 16:37:27 by tkatsuma          #+#    #+#             */
-/*   Updated: 2025/06/30 11:46:16 by tkatsuma         ###   ########.fr       */
+/*   Updated: 2025/07/04 10:42:04 by tkatsuma         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -69,7 +69,7 @@ t_carry	*create_new_carry(int fd)
 	new_carry->fd = fd;
 	new_carry->len = 0;
 	new_carry->txt = txt;
-	new_carry->eof = FALSE;
+	new_carry->eof = I_FALSE;
 	new_carry->next = NULL;
 	return (new_carry);
 }
@@ -82,7 +82,7 @@ t_carry	*append_carry(t_carry *head, t_read_resp *read_resp)
 	if (head == NULL)
 		return (NULL);
 	if (read_resp->txt == NULL)
-		head->eof = TRUE;
+		head->eof = I_TRUE;
 	new_txt = gnl_strjoin(head->txt, read_resp->txt);
 	head->len += read_resp->len;
 	if (head->txt != NULL)
